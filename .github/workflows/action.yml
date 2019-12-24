@@ -1,0 +1,25 @@
+# http://www.ruanyifeng.com/blog/2019/09/getting-started-with-github-actions.html
+# 触发 GitHub Actions 需要在项目仓库新建一个.github/workflows子目录
+# 里面是 YAML 格式配置文件，文件名可以随便取
+# GitHub 只要发现配置文件，就会运行 Actions
+
+# 配置文件的描述
+name: "GitHub Actions Weather Bot"
+
+# 触发条件
+on:
+  # 代码 Push 进仓库时
+  push:
+    branches:
+      - send
+  # 定时任务，每天在国际标准时间1点30分（北京时间早上9点30分）运行
+  schedule:
+    #  POSIX cron 语法
+    - cron: "30 1 * * *"
+
+jobs:
+  bot:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Send"
+        run: bash ./weather.sh ${{ secrets.QYWX }}
