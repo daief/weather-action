@@ -21,5 +21,7 @@ jobs:
   bot:
     runs-on: ubuntu-latest
     steps:
+      - name: 'Checkout codes'
+        uses: actions/checkout@v1
       - name: "Send"
         run: bash ./weather.sh ${{ secrets.QYWX }}
