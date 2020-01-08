@@ -2,7 +2,7 @@
 # @Author: daief
 # @LastEditors: daief
 # @Date: 2019-12-24 16:06:57
-# @LastEditTime: 2020-01-08 19:45:28
+# @LastEditTime: 2020-01-08 20:21:09
 # @Description:
 ###
 #!/bin/sh
@@ -20,7 +20,7 @@ VERSE=$(curl "https://v1.jinrishici.com/shuqing.txt")
 URLS=(${input//,/ })
 
 for url in ${URLS[@]}; do
-  curl $url \
+  curl -s $url \
     -H 'Content-Type: application/json' \
     -d "{
 
