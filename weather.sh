@@ -7,7 +7,7 @@
 ###
 #!/bin/sh
 
-set -eux
+set -e
 
 input=$1
 
