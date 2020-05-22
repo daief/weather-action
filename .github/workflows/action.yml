@@ -13,9 +13,9 @@ on:
     branches:
       - send
   # 定时任务，每天在国际标准时间1点30分（北京时间早上9点30分）运行
-  schedule:
+  # schedule:
     #  POSIX cron 语法
-    - cron: "30 1 * * *"
+    # - cron: "30 1 * * *"
 
 jobs:
   bot:
